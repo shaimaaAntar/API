@@ -13,4 +13,17 @@ class PostController extends Controller
         $msg = ["ok"];
         return response($posts,200,$msg);
     }
+public function show($id){
+
+        $post = Post::find($id);
+
+        if($post){
+ $msg = ["ok"];
+        return response($post,200,$msg);
+            
+        }
+        return response(null,'The post Not Found',404);
+
+    }
+
 }
